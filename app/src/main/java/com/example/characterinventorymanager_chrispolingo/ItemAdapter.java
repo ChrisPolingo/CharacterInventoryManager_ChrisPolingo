@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ItemAdapter extends RecyclerView.Adapter<ItemViewHolder>{
 
     private Application application;
+    private MainViewModel mainViewModel;
 
-    public ItemAdapter(Application application) {
+    public ItemAdapter(Application application, MainViewModel mainViewModel) {
+        this.application = application;
+        this.mainViewModel = mainViewModel;
     }
-
 
 
     @NonNull
@@ -27,12 +29,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        holder.tvName.setText("Sword");
-        holder.tvDescription.setText("1d8 + 5 Slashing");
+        Item item = mainViewModel.getSpecificItem(position);
+        holder.tvName.setText(item.getItemName());
+        holder.tvDescription.setText(item.getItemDescription());
     }
 
     @Override
     public int getItemCount() {
-        return 4;
+        return mainViewModel.getItemsSize();
     }
 }
