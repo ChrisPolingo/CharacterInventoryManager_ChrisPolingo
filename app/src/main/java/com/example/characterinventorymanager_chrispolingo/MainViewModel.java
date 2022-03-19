@@ -1,6 +1,7 @@
 package com.example.characterinventorymanager_chrispolingo;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -18,7 +19,8 @@ public class MainViewModel extends AndroidViewModel {
         public MutableLiveData<List<Item>> getItemList() {
             if (mItemList == null) {
                 mItemList = new MutableLiveData<List<Item>>();
-                mItemList.postValue(itemRepository.getAllItems());
+                mItemList = itemRepository.getAllItems();
+                //itemList = itemRepository.getAllItems();
             }
             return mItemList;
         }
@@ -26,14 +28,17 @@ public class MainViewModel extends AndroidViewModel {
     public MainViewModel(@NonNull Application application) {
         super(application);
         itemRepository = new ItemRepository(application);
-        //This line seems to crash the app, TODO ask Gibons about this
-        //changeFlag.postValue(false);
+
     }
 
     public void insert(String name, String description) {
         Item item = new Item(name, description);
         itemRepository.insert(item);
-        mItemList.postValue(itemRepository.getAllItems());
+
+        mItemList = itemRepository.getAllItems();
+        //itemList.add(item);
+        //mItemList.postValue(itemList);
+        Log.d("insert", name + "inserted into the itemRepository ");
     }
 
     public Integer getItemsSize() {
@@ -42,5 +47,11 @@ public class MainViewModel extends AndroidViewModel {
 
     public Item getSpecificItem(Integer position) {
         return itemRepository.getSpecificItem(position);
+    }
+
+    public void remove(Item item) {
+            itemRepository.delete(item);
+            mItemList = itemRepository.getAllItems();
+            //itemList = itemRepository.getAllItems();
     }
 }

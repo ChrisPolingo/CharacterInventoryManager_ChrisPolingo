@@ -1,5 +1,6 @@
 package com.example.characterinventorymanager_chrispolingo;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,14 +29,23 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Item item = mainViewModel.getSpecificItem(position);
         holder.tvName.setText(item.getItemName());
         holder.tvDescription.setText(item.getItemDescription());
+
+        holder.btnRemoveItem.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                mainViewModel.remove(mainViewModel.getSpecificItem(position));
+                notifyItemRemoved(position);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return mainViewModel.getItemsSize();
     }
+
+
 }

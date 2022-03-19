@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 // Update the UI, in this case, a TextView.
                 //textOrder.setText(textOrder.getText().toString() + "\n" + newStatus );
                 itemAdapter.notifyDataSetChanged();
+                Log.d("insert", "Live data updated " + newStatus.size());
             }
         };
         // Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.
