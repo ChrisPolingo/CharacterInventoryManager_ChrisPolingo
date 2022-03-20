@@ -35,6 +35,13 @@ public class MainViewModel extends AndroidViewModel {
 
     }
 
+    /**
+     * insert(String name, String description)
+     * Puts the Name and Description and puts them into an Item object.
+     * Then it inserts the item into the itemRepository, also updating the mItemList to match the itemRepository.
+     * @param name
+     * @param description
+     */
     public void insert(String name, String description) {
         Item item = new Item(name, description);
         itemRepository.insert(item);
@@ -45,14 +52,30 @@ public class MainViewModel extends AndroidViewModel {
         Log.d("insert", name + "inserted into the itemRepository ");
     }
 
+    /**
+     * getItemsSize()
+     * Gets and returns the size of the item list from the repository.
+     * @return itemRepository.getItemsSize()
+     */
     public Integer getItemsSize() {
         return itemRepository.getItemsSize();
     }
 
+    /**
+     * getSpecificItem(Integer position)
+     * Gets one item from the itemRepository, using the position
+     * @param position
+     * @return itemRepository.getSpecificItem(position)
+     */
     public Item getSpecificItem(Integer position) {
         return itemRepository.getSpecificItem(position);
     }
 
+    /**
+     * remove(Item item)
+     * Calls the delete method in the itemRepository and updates the mItemList to the state of the itemRepository.
+     * @param item
+     */
     public void remove(Item item) {
             itemRepository.delete(item);
             mItemList = itemRepository.getAllItems();

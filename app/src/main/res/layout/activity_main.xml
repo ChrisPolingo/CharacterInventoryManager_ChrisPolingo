@@ -1,99 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="238dp"
-        android:text="DnD Inventory Manager"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintBottom_toTopOf="@+id/rvItems"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvItemName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="12dp"
-        android:text="Item Name:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintEnd_toStartOf="@+id/etItemName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvTitle" />
-
-    <TextView
-        android:id="@+id/tvItemDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
-        android:text="Item Description: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvItemName" />
-
-    <EditText
-        android:id="@+id/etItemName"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="57dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/etItemDescription"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvItemName"
-        app:layout_constraintTop_toTopOf="@+id/tvTitle" />
-
-    <EditText
-        android:id="@+id/etItemDescription"
-        android:layout_width="0dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="7dp"
-        android:ems="10"
-        android:hint="Description"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/btnAddItem"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvItemDescription" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvItems"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="17dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnAddItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
-        android:text="Add Item"
-        app:layout_constraintBottom_toTopOf="@+id/rvItems"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="238dp"
+            android:text="DnD Inventory Manager"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintBottom_toTopOf="@+id/rvItems"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="12dp"
+            android:text="Item Name:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toStartOf="@+id/etItemName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+        <TextView
+            android:id="@+id/tvItemDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="68dp"
+            android:text="Item Description: "
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvItemName" />
+
+        <EditText
+            android:id="@+id/etItemName"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="57dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/etItemDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvItemName"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+        <EditText
+            android:id="@+id/etItemDescription"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="7dp"
+            android:ems="10"
+            android:hint="Description"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/btnAddItem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvItemDescription" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvItems"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:layout_marginBottom="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <Button
+            android:id="@+id/btnAddItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
+            android:text="Add Item"
+            app:layout_constraintBottom_toTopOf="@+id/rvItems"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -22,10 +22,20 @@ public class Item {
         this.itemDescription = itemDescription;
     }
 
+    /**
+     * getItemName()
+     * This gets the item name from the object
+     * @return itemName
+     */
     public String getItemName() {
         return itemName;
     }
 
+    /**
+     * getItemDescription()
+     * This gets the items description from the object
+     * @return
+     */
     public String getItemDescription() {
         return  itemDescription;
     }

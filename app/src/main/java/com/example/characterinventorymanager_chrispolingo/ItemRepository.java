@@ -27,6 +27,11 @@ public class ItemRepository {
         return allItems;
     }
 
+    /**
+     * insert(Item item)
+     * Inserts the item into the itemDao, and updates allItems with the current items in the itemDao.
+     * @param item
+     */
     void insert(Item item) {
         ItemDatabase.databaseWriteExecutor.execute(() -> {
             itemDao.insert(item);
@@ -34,16 +39,33 @@ public class ItemRepository {
         });
     }
 
+    /**
+     * getSpecificItem(Integer position)
+     * Gets an item from the allItems list, using the position.
+     * Returns an Item, returning the currentItem.
+     * @param position
+     * @return currentItem
+     */
     public Item getSpecificItem(Integer position) {
         Item currentItem = allItems.getValue().get(position);
         Log.d("Position equals ", String.valueOf(position));
         return currentItem;
     }
 
+    /**
+     * getItemSize()
+     * Returns the size of the allItems list
+     * @return allItems.getValue().size()
+     */
     public Integer getItemsSize() {
         return allItems.getValue().size();
     }
 
+    /**
+     * delete(Item item)
+     * calls the itemDao to delete the 'item', then updates the allItems list with all the remaining items in the itemDao.
+     * @param item
+     */
     void delete(Item item) {
         ItemDatabase.databaseWriteExecutor.execute(() -> {
            itemDao.delete(item);

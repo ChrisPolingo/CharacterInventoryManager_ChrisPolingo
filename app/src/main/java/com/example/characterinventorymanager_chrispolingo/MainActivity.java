@@ -55,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * setupLiveDataObserver()
+     * Starts the observer that watches for a change in the database and updates the item adapter.
+     */
     private void setupLiveDataObserver () {
         // Create the observer which updates the UI.
         final Observer<List<Item>> statusObserver = new Observer<List<Item>>() {
