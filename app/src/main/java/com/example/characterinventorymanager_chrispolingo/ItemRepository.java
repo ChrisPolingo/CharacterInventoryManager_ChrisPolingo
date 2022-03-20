@@ -30,6 +30,7 @@ public class ItemRepository {
     void insert(Item item) {
         ItemDatabase.databaseWriteExecutor.execute(() -> {
             itemDao.insert(item);
+            allItems.postValue(itemDao.getAll());
         });
     }
 
@@ -46,6 +47,7 @@ public class ItemRepository {
     void delete(Item item) {
         ItemDatabase.databaseWriteExecutor.execute(() -> {
            itemDao.delete(item);
+           allItems.postValue(itemDao.getAll());
         });
     }
 

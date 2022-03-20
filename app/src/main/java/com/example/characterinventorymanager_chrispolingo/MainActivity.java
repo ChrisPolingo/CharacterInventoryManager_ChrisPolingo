@@ -29,7 +29,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        mainViewModel.setupItemList();
+
         etItemName = findViewById(R.id.etItemName);
         etItemDescription = findViewById(R.id.etItemDescription);
         rvItems = findViewById(R.id.rvItems);

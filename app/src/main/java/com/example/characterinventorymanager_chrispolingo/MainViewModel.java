@@ -16,12 +16,16 @@ public class MainViewModel extends AndroidViewModel {
     //private List<Item> itemList;
 
     private MutableLiveData<List<Item>> mItemList;
-        public MutableLiveData<List<Item>> getItemList() {
+        public MutableLiveData<List<Item>> setupItemList() {
             if (mItemList == null) {
-                mItemList = new MutableLiveData<List<Item>>();
+                //mItemList = new MutableLiveData<List<Item>>();
                 mItemList = itemRepository.getAllItems();
                 //itemList = itemRepository.getAllItems();
             }
+            return mItemList;
+        }
+
+        public MutableLiveData<List<Item>> getItemList() {
             return mItemList;
         }
 
