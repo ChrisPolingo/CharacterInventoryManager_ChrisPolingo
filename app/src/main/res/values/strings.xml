@@ -3,8 +3,12 @@
     <string name="name_here">Name Here</string>
     <string name="description_here">Description here</string>
     <string name="remove">Remove</string>
-
+    <string name="dnd_inventory_manager">DnD Inventory Manager</string>
+    <string name="item_name">Item Name:</string>
+    <string name="item_description">Item Description:</string>
     <string name="name">Name</string>
     <string name="description">Description</string>
     <string name="add_item">Add Item</string>
+
+
 </resources>
