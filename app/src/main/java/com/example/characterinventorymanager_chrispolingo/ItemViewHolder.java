@@ -13,6 +13,10 @@ public class ItemViewHolder extends RecyclerView.ViewHolder{
     TextView tvDescription;
     Button btnRemoveItem;
 
+    /**
+     * This is the constructor for the ItemViewHolder
+     * @param itemView
+     */
     public ItemViewHolder(@NonNull View itemView) {
         super(itemView);
         tvName = itemView.findViewById(R.id.tvName);

@@ -14,12 +14,20 @@ public class ItemRepository {
     private ItemDao itemDao;
     private MutableLiveData<List<Item>> allItems;
 
+    /**
+     * This is the constructor for the ItemRepository.
+     * @param application
+     */
     ItemRepository(Application application) {
         ItemDatabase db = ItemDatabase.getDatabase(application);
         itemDao = db.itemDao();
         allItems = new MutableLiveData<List<Item>>();
     }
 
+    /**
+     * This updates the allItems with all of the items stored in the database, then returns the allItems
+     * @return allItems
+     */
     MutableLiveData<List<Item>> getAllItems() {
         ItemDatabase.databaseWriteExecutor.execute(() -> {
             allItems.postValue(itemDao.getAll());

@@ -12,11 +12,19 @@ public class Item {
     public String itemName;
     public String itemDescription;
 
+    /**
+     * Blank constructor for the Item object.
+     */
     public Item() {
         itemName = "";
         itemDescription = "";
     }
 
+    /**
+     * Constructor that assigns values to both the itemName and itemDescription.
+     * @param itemName
+     * @param itemDescription
+     */
     public Item (String itemName, String itemDescription) {
         this.itemName = itemName;
         this.itemDescription = itemDescription;

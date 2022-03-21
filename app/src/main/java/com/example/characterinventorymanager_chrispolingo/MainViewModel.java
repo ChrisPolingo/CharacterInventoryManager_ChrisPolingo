@@ -29,6 +29,10 @@ public class MainViewModel extends AndroidViewModel {
             return mItemList;
         }
 
+    /**
+     * Constructor for the MainViewModel
+     * @param application
+     */
     public MainViewModel(@NonNull Application application) {
         super(application);
         itemRepository = new ItemRepository(application);
@@ -70,6 +74,7 @@ public class MainViewModel extends AndroidViewModel {
     public Item getSpecificItem(Integer position) {
         return itemRepository.getSpecificItem(position);
     }
+
 
     /**
      * remove(Item item)

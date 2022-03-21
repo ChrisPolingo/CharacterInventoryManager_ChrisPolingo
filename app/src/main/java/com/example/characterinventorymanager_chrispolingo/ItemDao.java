@@ -1,5 +1,9 @@
 package com.example.characterinventorymanager_chrispolingo;
 
+/**
+ * This DAO is used for the ROOM database.
+ */
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.room.Dao;

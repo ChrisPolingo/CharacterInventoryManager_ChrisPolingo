@@ -25,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
     MainViewModel mainViewModel;
     //Creating an update view button
 
+    /**
+     * This is the onCreate method for the MainActivity.
+     * This assigns all the elements in the activity_main their counterparts in this MainActivity.
+     * This also calls the setupLiveDataObserver(), and sets up the onClick listener for the addItem button.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
